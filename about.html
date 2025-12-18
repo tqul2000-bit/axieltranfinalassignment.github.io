@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Me</title>
+<style>
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+header {
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    padding: 10px;
+    text-align: center;
+    width: 1500.8px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    color: white;
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    background: rgba(0, 0, 0, 0.25);
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
+footer {
+    background-color: #1c2741;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    backdrop-filter: blur(6px);
+}
+
+button {
+    background-color: #142351;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+h2, h3, h4 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+h1, h2, h3, h4, p {
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+header, nav {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.header-text h1,
+.header-text p {
+    margin: 0;
+}
+
+main, header, nav, footer {
+    position: relative;
+    z-index: 1;
+}
+
+.music-section {
+    text-align: center;
+}
+
+.music-section audio {
+    margin: 15px 0;
+    width: 100%;
+    max-width: 400px;
+}
+
+.playlist button {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.playlist button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.playlist {
+    margin: 15px 0;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.lyrics {
+    text-align: left;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.lyrics-box {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    line-height: 1.6;
+    border-left: 4px solid rgba(255, 255, 255, 0.4);
+    padding-left: 16px;
+}
+
+.video-bg {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(22px) brightness(0.5);
+    transform: scale(1.1);
+}
+
+.lyrics-tabs {
+    margin-bottom: 12px;
+}
+
+.lyrics-tabs button {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 12px;
+    margin-right: 6px;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.lyrics-tabs button:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.lyrics-part {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <img src="logo.png" alt="Site Logo" class="logo">
+  <div class="header-text">
+    <h1>About Me</h1>
+    <p></p>
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <h2>About</h2>
+    <p>My full name is Tran Quoc Van Long, I would like to be call Axiel, and I'm a student at Asia University with the student ID AUS14892.
+        I speak Vietnamese and English. My hobbies are playing games, reading books, and listening to music.
+        My biggest goal is to be with Christ.
+        I love my parents, my friends, my family and God above all.
+    </p>
+    <section class="music-section">
+    <h3>My favorite Psalms</h3>
+    <p>Psalm 22, Psalm 23, Psalm 77, Psalm 119, and Psalm 139 are my favorite Psalms.        
+    </p>
+    <audio id="player" controls>
+    <source src="Psalm 22.mp3" type="audio/mpeg">
+    Your browser does not support audio.
+  </audio>
+  <div class="playlist">
+  <button onclick="playSong('Psalm 22.mp3', 'lyrics1')">Psalm 22</button>
+  <button onclick="playSong('Psalm 23.mp3', 'lyrics2')">Psalm 23</button>
+  <button onclick="playSong('Psalm 77.mp3', 'lyrics3')">Psalm 77</button>
+  <button onclick="playSong('Psalm 119.mp3', 'lyrics119')">Psalm 119</button>
+  <button onclick="playSong('Psalm 139.mp3', 'lyrics5')">Psalm 139</button>
+</div>
+  <div class="lyrics">
+    <div id="lyrics1" class="lyrics-box">
+      <h3>Psalm 22</h3>
+      <p>
+1 
+My God, my God, why have you forsaken me?
+    Why are you so far from saving me,
+    so far from my cries of anguish?</br>
+2 
+My God, I cry out by day, but you do not answer,
+    by night, but I find no rest.[b]</br>
+
+3 
+Yet you are enthroned as the Holy One;
+    you are the one Israel praises.[c]</br>
+4 
+In you our ancestors put their trust;
+    they trusted and you delivered them.</br>
+5 
+To you they cried out and were saved;
+    in you they trusted and were not put to shame.</br>
+
+6 
+But I am a worm and not a man,
+    scorned by everyone, despised by the people.</br>
+7 
+All who see me mock me;
+    they hurl insults, shaking their heads.</br>
+8 
+“He trusts in the Lord,” they say,
+    “let the Lord rescue him.
+Let him deliver him,
+    since he delights in him.”</br>
+
+9 
+Yet you brought me out of the womb;
+    you made me trust in you, even at my mother’s breast.</br>
+10 
+From birth I was cast on you;
+    from my mother’s womb you have been my God.</br>
+
+11 
+Do not be far from me,
+    for trouble is near
+    and there is no one to help.</br>
+
+12 
+Many bulls surround me;
+    strong bulls of Bashan encircle me.</br>
+13 
+Roaring lions that tear their prey
+    open their mouths wide against me.</br>
+14 
+I am poured out like water,
+    and all my bones are out of joint.
+My heart has turned to wax;
+    it has melted within me.</br>
+15 
+My mouth[d] is dried up like a potsherd,
+    and my tongue sticks to the roof of my mouth;
+    you lay me in the dust of death.</br>
+
+16 
+Dogs surround me,
+    a pack of villains encircles me;
+    they pierce[e] my hands and my feet.</br>
+17 
+All my bones are on display;
+    people stare and gloat over me.</br>
+18 
+They divide my clothes among them
+    and cast lots for my garment.</br>
+
+19 
+But you, Lord, do not be far from me.
+    You are my strength; come quickly to help me.</br>
+20 
+Deliver me from the sword,
+    my precious life from the power of the dogs.</br>
+21 
+Rescue me from the mouth of the lions;
+    save me from the horns of the wild oxen.</br>
+
+22 
+I will declare your name to my people;
+    in the assembly I will praise you.</br>
+23 
+You who fear the Lord, praise him!
+    All you descendants of Jacob, honor him!
+    Revere him, all you descendants of Israel!</br>
+24 
+For he has not despised or scorned
+    the suffering of the afflicted one;
+he has not hidden his face from him
+    but has listened to his cry for help.</br>
+
+25 
+From you comes the theme of my praise in the great assembly;
+    before those who fear you[f] I will fulfill my vows.</br>
+26 
+The poor will eat and be satisfied;
+    those who seek the Lord will praise him—
+    may your hearts live forever!</br>
+
+27 
+All the ends of the earth
+    will remember and turn to the Lord,
+and all the families of the nations
+    will bow down before him,</br>
+28 
+for dominion belongs to the Lord
+    and he rules over the nations.</br>
+
+29 
+All the rich of the earth will feast and worship;
+    all who go down to the dust will kneel before him—
+    those who cannot keep themselves alive.</br>
+30 
+Posterity will serve him;
+    future generations will be told about the Lord.</br>
+31 
+They will proclaim his righteousness,
+    declaring to a people yet unborn:
+    He has done it!</br>
+      </p>
+    </div>
+    <div id="lyrics2" class="lyrics-box">
+      <h3>Psalm 23</h3>
+      <p>
+1 
+The Lord is my shepherd, I lack nothing.</br>
+2 
+    He makes me lie down in green pastures,
+he leads me beside quiet waters,</br>
+3 
+    he refreshes my soul.
+He guides me along the right paths
+    for his name’s sake.</br>
+4 
+Even though I walk
+    through the darkest valley,[a]
+I will fear no evil,
+    for you are with me;
+your rod and your staff,
+    they comfort me.</br>
+
+5 
+You prepare a table before me
+    in the presence of my enemies.
+You anoint my head with oil;
+    my cup overflows.</br>
+6 
+Surely your goodness and love will follow me
+    all the days of my life,
+and I will dwell in the house of the Lord
+    forever.</br>
+      </p>
+    </div>
+    <div id="lyrics3" class="lyrics-box">
+      <h3>Psalm 77</h3>
+      <p>
+1 
+I cried out to God for help;
+    I cried out to God to hear me.</br>
+2 
+When I was in distress, I sought the Lord;
+    at night I stretched out untiring hands,
+    and I would not be comforted.</br>
+3 
+I remembered you, God, and I groaned;
+    I meditated, and my spirit grew faint.[b]</br>
+4 
+You kept my eyes from closing;
+    I was too troubled to speak.</br>
+5 
+I thought about the former days,
+    the years of long ago;</br>
+6 
+I remembered my songs in the night.
+    My heart meditated and my spirit asked:</br>
+7 
+“Will the Lord reject forever?
+    Will he never show his favor again?</br>
+8 
+Has his unfailing love vanished forever?
+    Has his promise failed for all time?</br>
+9 
+Has God forgotten to be merciful?
+    Has he in anger withheld his compassion?”</br>
+
+10 
+Then I thought, “To this I will appeal:
+    the years when the Most High stretched out his right hand.</br>
+11 
+I will remember the deeds of the Lord;
+    yes, I will remember your miracles of long ago.</br>
+12 
+I will consider all your works
+    and meditate on all your mighty deeds.”</br>
+
+13 
+Your ways, God, are holy.
+    What god is as great as our God?</br>
+14 
+You are the God who performs miracles;
+    you display your power among the peoples.</br>
+15 
+With your mighty arm you redeemed your people,
+    the descendants of Jacob and Joseph.</br>
+
+16 
+The waters saw you, God,
+    the waters saw you and writhed;
+    the very depths were convulsed.</br>
+17 
+The clouds poured down water,
+    the heavens resounded with thunder;
+    your arrows flashed back and forth.</br>
+18 
+Your thunder was heard in the whirlwind,
+    your lightning lit up the world;
+    the earth trembled and quaked.</br>
+19 
+Your path led through the sea,
+    your way through the mighty waters,
+    though your footprints were not seen.</br>
+
+20 
+You led your people like a flock
+    by the hand of Moses and Aaron.</br>
+        </p>
+      </div>
+    <div id="lyrics119" class="lyrics-box">
+  <h3>Psalm 119</h3>
+
+    <div class="lyrics-tabs">
+        <button onclick="showPart('p119-1')">א Aleph</button>
+        <button onclick="showPart('p119-2')">ב Beth</button>
+        <button onclick="showPart('p119-3')">ג Gimel</button>
+        <button onclick="showPart('p119-4')">ד Daleth</button>
+        <button onclick="showPart('p119-5')">ה He</button>
+        <button onclick="showPart('p119-6')">ו Waw</button>
+        <button onclick="showPart('p119-7')">ז Zayin</button>
+        <button onclick="showPart('p119-8')">ח Heth</button>
+        <button onclick="showPart('p119-9')">ט Teth</button>
+        <button onclick="showPart('p119-10')">י Yodh</button>
+        <button onclick="showPart('p119-11')">כ Kaph</button>
+        <button onclick="showPart('p119-12')">ל Lamedh</button>
+        <button onclick="showPart('p119-13')">מ Mem</button>
+        <button onclick="showPart('p119-14')">נ Nun</button>
+        <button onclick="showPart('p119-15')">ס Samekh</button>
+        <button onclick="showPart('p119-16')">ע Ayin</button>
+        <button onclick="showPart('p119-17')">פ Pe</button>
+        <button onclick="showPart('p119-18')">צ Tsadhe</button>
+        <button onclick="showPart('p119-19')">ק Qoph</button>
+        <button onclick="showPart('p119-20')">ר Resh</button>
+        <button onclick="showPart('p119-21')">ש Sin and Shin</button>
+        <button onclick="showPart('p119-22')">ת Taw</button>
+    </div>
+  <div id="p119-1" class="lyrics-part">
+    <p>
+1 
+Blessed are those whose ways are blameless,
+    who walk according to the law of the Lord.<br>
+2 
+Blessed are those who keep his statutes
+    and seek him with all their heart—<br>
+3 
+they do no wrong
+    but follow his ways.<br>
+4 
+You have laid down precepts
+    that are to be fully obeyed.<br>
+5 
+Oh, that my ways were steadfast
+    in obeying your decrees!<br>
+6 
+Then I would not be put to shame
+    when I consider all your commands.<br>
+7 
+I will praise you with an upright heart
+    as I learn your righteous laws.<br>
+8 
+I will obey your decrees;
+    do not utterly forsake me.<br>
+        </p>
+        </div>
+        <div id="p119-2" class="lyrics-part">
+        <p>
+        00:48</br>
+9 
+How can a young person stay on the path of purity?
+    By living according to your word.<br>
+10 
+I seek you with all my heart;
+    do not let me stray from your commands.<br>
+11 
+I have hidden your word in my heart
+    that I might not sin against you.<br>
+12 
+Praise be to you, Lord;
+    teach me your decrees.<br>
+13 
+With my lips I recount
+    all the laws that come from your mouth.<br>
+14 
+I rejoice in following your statutes
+    as one rejoices in great riches.<br>
+15 
+I meditate on your precepts
+    and consider your ways.<br>
+16 
+I delight in your decrees;
+    I will not neglect your word.<br>
+        </p>
+        </div>
+        <div id="p119-3" class="lyrics-part">
+        <p>
+        01:34</br>
+17 Be good to your servant while I live,
+    that I may obey your word.</br>
+18 
+Open my eyes that I may see
+    wonderful things in your law.</br>
+19 
+I am a stranger on earth;
+    do not hide your commands from me.</br>
+20 
+My soul is consumed with longing
+    for your laws at all times.</br>
+21 
+You rebuke the arrogant, who are accursed,
+    those who stray from your commands.</br>
+22 
+Remove from me their scorn and contempt,
+    for I keep your statutes.</br>
+23 
+Though rulers sit together and slander me,
+    your servant will meditate on your decrees.</br>
+24 
+Your statutes are my delight;
+    they are my counselors.</br>
+        </p>
+        </div>
+        <div id="p119-4" class="lyrics-part">
+        <p>
+        02:22</br>
+25 I am laid low in the dust;
+    preserve my life according to your word.</br>
+26 
+I gave an account of my ways and you answered me;
+    teach me your decrees.</br>
+27 
+Cause me to understand the way of your precepts,
+    that I may meditate on your wonderful deeds.</br>
+28 
+My soul is weary with sorrow;
+    strengthen me according to your word.</br>
+29 
+Keep me from deceitful ways;
+    be gracious to me and teach me your law.</br>
+30 
+I have chosen the way of faithfulness;
+    I have set my heart on your laws.</br>
+31 
+I hold fast to your statutes, Lord;
+    do not let me be put to shame.</br>
+32 
+I run in the path of your commands,
+    for you have broadened my understanding.</br>
+        </p>
+        </div>
+        <div id="p119-5" class="lyrics-part">
+        <p>
+        03:09</br>
+33 Teach me, Lord, the way of your decrees,
+    that I may follow it to the end.</br>
+34 Give me understanding,
+    so that I may keep your law
+    and obey it with all my heart.</br>
+35 Direct me in the path of your commands,
+    for there I find delight.</br>
+    
+36 
+Turn my heart toward your statutes
+    and not toward selfish gain.</br>
+37 
+Turn my eyes away from worthless things;
+    preserve my life according to your word.[c]</br>
+38 
+Fulfill your promise to your servant,
+    so that you may be feared.</br>
+39 
+Take away the disgrace I dread,
+    for your laws are good.</br>
+40 
+How I long for your precepts!
+    In your righteousness preserve my life.</br>
+        </p>
+        </div>
+        <div id="p119-6" class="lyrics-part">
+        <p>
+        03:56</br>
+41 May your unfailing love come to me, Lord,
+    your salvation, according to your promise;</br>
+42 
+then I can answer anyone who taunts me,
+    for I trust in your word.</br>
+43 
+Never take your word of truth from my mouth,
+    for I have put my hope in your laws.</br>
+44 
+I will always obey your law,
+    for ever and ever.</br>
+45 
+I will walk about in freedom,
+    for I have sought out your precepts.</br>
+46 
+I will speak of your statutes before kings
+    and will not be put to shame,</br>
+47 
+for I delight in your commands
+    because I love them.</br>
+48 
+I reach out for your commands, which I love,
+    that I may meditate on your decrees.</br>
+        </p>
+        </div>
+        <div id="p119-7" class="lyrics-part">
+        <p>
+        04:42</br>
+49 Remember your word to your servant,
+    for you have given me hope.</br>
+50 
+My comfort in my suffering is this:
+    Your promise preserves my life.</br>
+51 
+The arrogant mock me unmercifully,
+    but I do not turn from your law.</br>
+52 
+I remember, Lord, your ancient laws,
+    and I find comfort in them.</br>
+53 
+Indignation grips me because of the wicked,
+    who have forsaken your law.</br>
+54 
+Your decrees are the theme of my song
+    wherever I lodge.</br>
+55 
+In the night, Lord, I remember your name,
+    that I may keep your law.</br>
+56 
+This has been my practice:
+    I obey your precepts.</br>
+        </p>
+        </div>
+        <div id="p119-8" class="lyrics-part">
+        <p>
+        05:28</br>
+57 You are my portion, Lord;
+    I have promised to obey your words.</br>
+58 
+I have sought your face with all my heart;
+    be gracious to me according to your promise.</br>
+59 
+I have considered my ways
+    and have turned my steps to your statutes.</br>
+60 
+I will hasten and not delay
+    to obey your commands.</br>
+61 
+Though the wicked bind me with ropes,
+    I will not forget your law.</br>
+62 
+At midnight I rise to give you thanks
+    for your righteous laws.</br>
+63 
+I am a friend to all who fear you,
+    to all who follow your precepts.</br>
+64 
+The earth is filled with your love, Lord;
+    teach me your decrees.</br>
+        </p>
+        </div>
+        <div id="p119-9" class="lyrics-part">
+        <p>
+        06:09</br>
+65 Do good to your servant according to your word, Lord.</br>
+66 
+Teach me knowledge and good judgment,
+    for I trust your commands.</br>
+    
+67 
+Before I was afflicted I went astray,
+    but now I obey your word.</br>
+68 
+You are good, and what you do is good;
+    teach me your decrees.</br>
+69 
+Though the arrogant have smeared me with lies,
+    I keep your precepts with all my heart.</br>
+70 
+Their hearts are callous and unfeeling,
+    but I delight in your law.</br>
+71 
+It was good for me to be afflicted
+    so that I might learn your decrees.</br>
+72 
+The law from your mouth is more precious to me
+    than thousands of pieces of silver and gold.</br>
+        </p>
+        </div>
+        <div id="p119-10" class="lyrics-part">
+        <p>
+        07:00</br>
+73 Your hands made me and formed me;
+    give me understanding to learn your commands.</br>
+74 
+May those who fear you rejoice when they see me,
+    for I have put my hope in your word.</br>
+75 
+I know, Lord, that your laws are righteous,
+    and that in faithfulness you have afflicted me.</br>
+76 
+May your unfailing love be my comfort,
+    according to your promise to your servant.</br>
+77 
+Let your compassion come to me that I may live,
+    for your law is my delight.</br>
+78 
+May the arrogant be put to shame for wronging me without cause;
+    but I will meditate on your precepts.</br>
+79 
+May those who fear you turn to me,
+    those who understand your statutes.</br>
+80 
+May I wholeheartedly follow your decrees,
+    that I may not be put to shame.</br>
+        </p>
+        </div>
+        <div id="p119-11" class="lyrics-part">
+        <p>   
+        07:56</br>
+81 My soul faints with longing for your salvation,
+    but I have put my hope in your word.</br>
+    
+82 
+My eyes fail, looking for your promise;
+    I say, “When will you comfort me?”</br>
+83 
+Though I am like a wineskin in the smoke,
+    I do not forget your decrees.</br>
+84 
+How long must your servant wait?
+    When will you punish my persecutors?</br>
+85 
+The arrogant dig pits to trap me,
+    contrary to your law.</br>
+86 
+All your commands are trustworthy;
+    help me, for I am being persecuted without cause.</br>
+87 
+They almost wiped me from the earth,
+    but I have not forsaken your precepts.</br>
+88 
+In your unfailing love preserve my life,
+    that I may obey the statutes of your mouth.</br>
+      </p>
+      </div>
+    <div id="p119-12" class="lyrics-part">
+      <p>
+        08:48</br>
+89 Your word, Lord, is eternal;
+    it stands firm in the heavens.</br>
+90 
+Your faithfulness continues through all generations;
+    you established the earth, and it endures.</br>
+91 
+Your laws endure to this day,
+    for all things serve you.</br>
+92 
+If your law had not been my delight,
+    I would have perished in my affliction.</br>
+93 
+I will never forget your precepts,
+    for by them you have preserved my life.</br>
+94 
+Save me, for I am yours;
+    I have sought out your precepts.</br>
+95 
+The wicked are waiting to destroy me,
+    but I will ponder your statutes.</br>
+96 
+To all perfection I see a limit,
+    but your commands are boundless.</br>
+      </p>
+      </div>
+      <div id="p119-13" class="lyrics-part">
+      <p>
+        09:36</br>
+97 Oh, how I love your law!
+    I meditate on it all day long.</br>
+98 
+Your commands are always with me
+    and make me wiser than my enemies.</br>
+99 
+I have more insight than all my teachers,
+    for I meditate on your statutes.</br>
+100 
+I have more understanding than the elders,
+    for I obey your precepts.</br>
+101 
+I have kept my feet from every evil path
+    so that I might obey your word.</br>
+102 
+I have not departed from your laws,
+    for you yourself have taught me.</br>
+103 
+How sweet are your words to my taste,
+    sweeter than honey to my mouth!</br>
+104 
+I gain understanding from your precepts;
+    therefore I hate every wrong path.</br>
+      </p>
+      </div>
+      <div id="p119-14" class="lyrics-part">
+      <p>
+        10:20</br>
+105 Your word is a lamp to my feet,
+    a light on my path.</br>
+106 
+I have taken an oath and confirmed it,
+    that I will follow your righteous laws.</br>
+107 
+I have suffered much;
+    preserve my life, Lord, according to your word.</br>
+108 
+Accept, Lord, the willing praise of my mouth,
+    and teach me your laws.</br>
+109 
+Though I constantly take my life in my hands,
+    I will not forget your law.</br>
+110 
+The wicked have set a snare for me,
+    but I have not strayed from your precepts.</br>
+111 
+Your statutes are my heritage forever;
+    they are the joy of my heart.</br>
+112 
+My heart is set on keeping your decrees
+    to the very end.[d]</br>
+      </p>
+      </div>
+      <div id="p119-15" class="lyrics-part">
+      <p>
+        11:07</br>
+113 I hate double-minded people,
+    but I love your law.</br>
+114 
+You are my refuge and my shield;
+    I have put my hope in your word.</br>
+115 
+Away from me, you evildoers,
+    that I may keep the commands of my God!</br>
+116 
+Sustain me, my God, according to your promise, and I will live;
+    do not let my hopes be dashed.</br>
+117 
+Uphold me, and I will be delivered;
+    I will always have regard for your decrees.</br>
+118 
+You reject all who stray from your decrees,
+    for their delusions come to nothing.</br>
+119 
+All the wicked of the earth you discard like dross;
+    therefore I love your statutes.</br>
+120 
+My flesh trembles in fear of you;
+    I stand in awe of your laws.</br>
+        </p>
+        </div>
+        <div id="p119-16" class="lyrics-part">
+        <p>
+            11:57</br>
+121 I have done what is righteous and just;
+    do not leave me to my oppressors.</br>
+122 
+Ensure your servant’s well-being;
+    do not let the arrogant oppress me.</br>
+123 
+My eyes fail, looking for your salvation,
+    looking for your righteous promise.</br>
+124 
+Deal with your servant according to your love
+    and teach me your decrees.</br>
+125 
+I am your servant; give me discernment
+    that I may understand your statutes.</br>
+126 
+It is time for you to act, Lord;
+    your law is being broken.</br>
+127 
+Because I love your commands
+    more than gold, more than pure gold,</br>
+128 
+and because I consider all your precepts right,
+    I hate every wrong path.</br>
+        </p>
+        </div>
+        <div id="p119-17" class="lyrics-part">
+        <p>
+            12:45</br>
+129 Your statutes are wonderful;
+    therefore I obey them.</br>
+130 
+The unfolding of your words gives light;
+    it gives understanding to the simple.</br>
+131 
+I open my mouth and pant,
+    longing for your commands.</br>
+132 
+Turn to me and have mercy on me,
+    as you always do to those who love your name.</br>
+133 
+Direct my footsteps according to your word;
+    let no sin rule over me.</br>
+134 
+Redeem me from human oppression,
+    that I may obey your precepts.</br>
+135 
+Make your face shine on your servant
+    and teach me your decrees.</br>
+136 
+Streams of tears flow from my eyes,
+    for your law is not obeyed.</br>
+        </p>
+        </div>
+        <div id="p119-18" class="lyrics-part">
+        <p>
+            13:28</br>
+137 You are righteous, Lord,
+    and your laws are right.</br>
+138 
+The statutes you have laid down are righteous;
+    they are fully trustworthy.</br>
+139 
+My zeal wears me out,
+    for my enemies ignore your words.</br>
+140 
+Your promises have been thoroughly tested,
+    and your servant loves them.</br>
+141 
+Though I am lowly and despised,
+    I do not forget your precepts.</br>
+142 
+Your righteousness is everlasting
+    and your law is true.</br>
+143 
+Trouble and distress have come upon me,
+    but your commands give me delight.</br>
+144 
+Your statutes are always righteous;
+    give me understanding that I may live.</br>
+        </p>
+        </div>
+        <div id="p119-19" class="lyrics-part">
+        <p>
+            14:11</br>
+145 I call with all my heart; answer me, Lord,
+    and I will obey your decrees.</br>
+146 
+I call out to you; save me
+    and I will keep your statutes.</br>
+147 
+I rise before dawn and cry for help;
+    I have put my hope in your word.</br>
+148 
+My eyes stay open through the watches of the night,
+    that I may meditate on your promises.</br>
+149 
+Hear my voice in accordance with your love;
+    preserve my life, Lord, according to your laws.</br>
+150 
+Those who devise wicked schemes are near,
+    but they are far from your law.</br>
+151 
+Yet you are near, Lord,
+    and all your commands are true.</br>
+152 
+Long ago I learned from your statutes
+    that you established them to last forever.</br>
+        </p>
+        </div>
+        <div id="p119-20" class="lyrics-part">
+        <p>
+            14:58</br>
+153 Look on my suffering and deliver me,
+    for I have not forgotten your law.</br>
+154 
+Defend my cause and redeem me;
+    preserve my life according to your promise.</br>
+155 
+Salvation is far from the wicked,
+    for they do not seek out your decrees.</br>
+156 
+Your compassion, Lord, is great;
+    preserve my life according to your laws.</br>
+157 
+Many are the foes who persecute me,
+    but I have not turned from your statutes.</br>
+158 
+I look on the faithless with loathing,
+    for they do not obey your word.</br>
+159 
+See how I love your precepts;
+    preserve my life, Lord, in accordance with your love.</br>
+160 
+All your words are true;
+    all your righteous laws are eternal.</br>
+        </p>
+        </div>
+        <div id="p119-21" class="lyrics-part">
+        <p>
+            15:44</br>
+161 Rulers persecute me without cause,
+    but my heart trembles at your word.</br>
+162 
+I rejoice in your promise
+    like one who finds great spoil.</br>
+163 
+I hate and detest falsehood
+    but I love your law.</br>
+164 
+Seven times a day I praise you
+    for your righteous laws.</br>
+165 
+Great peace have those who love your law,
+    and nothing can make them stumble.</br>
+166 
+I wait for your salvation, Lord,
+    and I follow your commands.</br>
+167 
+I obey your statutes,
+    for I love them greatly.</br>
+168 
+I obey your precepts and your statutes,
+    for all my ways are known to you.</br>
+        </p>
+        </div>
+        <div id="p119-22" class="lyrics-part">
+        <p>
+            16:26</br>
+169 May my cry come before you, Lord;
+    give me understanding according to your word.</br>
+170 
+May my supplication come before you;
+    deliver me according to your promise.</br>
+171 
+May my lips overflow with praise,
+    for you teach me your decrees.</br>
+172 
+May my tongue sing of your word,
+    for all your commands are righteous.</br>
+173 
+May your hand be ready to help me,
+    for I have chosen your precepts.</br>
+174 
+I long for your salvation, Lord,
+    and your law gives me delight.</br>
+175 
+Let me live that I may praise you,
+    and may your laws sustain me.</br>
+176 
+I have strayed like a lost sheep.
+    Seek your servant,
+    for I have not forgotten your commands.</br>
+        </p>
+    </div>
+</div>
+
+    <div id="lyrics5" class="lyrics-box">
+      <h3>Psalm 139</h3>
+      <p>
+        
+1 
+You have searched me, Lord,
+    and you know me.</br>
+
+2 
+You know when I sit and when I rise;
+    you perceive my thoughts from afar.</br>
+
+3 
+You discern my going out and my lying down;
+    you are familiar with all my ways.</br>
+
+4 
+Before a word is on my tongue
+    you, Lord, know it completely.</br>
+
+5 
+You hem me in behind and before,
+    and you lay your hand upon me.</br>
+
+6 
+Such knowledge is too wonderful for me,
+    too lofty for me to attain.</br>
+
+7 
+Where can I go from your Spirit?
+    Where can I flee from your presence?</br>
+
+8 
+If I go up to the heavens, you are there;
+    if I make my bed in the depths, you are there.</br>
+
+9 
+If I rise on the wings of the dawn,
+    if I settle on the far side of the sea,</br>
+
+10 
+even there your hand will guide me,
+    your right hand will hold me fast.</br>
+
+11 
+If I say, “Surely the darkness will hide me
+    and the light become night around me,”</br>
+
+12 
+even the darkness will not be dark to you;
+    the night will shine like the day,
+    for darkness is as light to you.</br>
+
+13 
+For you created my inmost being;
+    you knit me together in my mother's womb.</br>
+
+14 
+I praise you because I am fearfully and wonderfully made;
+    your works are wonderful,
+    I know that full well.</br>
+
+15 
+My frame was not hidden from you
+    when I was made in the secret place,
+    when I was woven together in the depths of the earth.</br>
+
+16 
+Your eyes saw my unformed body;
+    all the days ordained for me were written in your book
+    before one of them came to be.</br>
+17 
+How precious to me are your thoughts,[a] God!
+    How vast is the sum of them!</br>
+
+18 
+Were I to count them,
+    they would outnumber the grains of sand—
+    when I awake, I am still with you.</br>
+
+19 
+If only you, God, would slay the wicked!
+    Away from me, you who are bloodthirsty!</br>
+
+20 
+They speak of you with evil intent;
+    your adversaries misuse your name.</br>
+
+21 
+Do I not hate those who hate you, Lord,
+    and abhor those who are in rebellion against you?</br>
+
+22 
+I have nothing but hatred for them;
+    I count them my enemies.</br>
+
+23 
+Search me, God, and know my heart;
+    test me and know my anxious thoughts.</br>
+
+24 
+See if there is any offensive way in me,
+    and lead me in the way everlasting.</br>
+        </p>
+        </div>
+    </div>
+        </section>
+        <h4>My Favorite Video</h4>
+        <video id="mainVideo" controls width="100%" style="max-width: 800px; border-radius: 12px;">
+        <source src="That One Christian Edit.mp4" type="video/mp4">
+    </video>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Axiel</p>
+</footer>
+
+<script>
+  const player = document.getElementById("player");
+  const mainVideo = document.getElementById("mainVideo");
+
+  function playSong(song, lyricsId) {
+    if (mainVideo && !mainVideo.paused) {
+      mainVideo.pause();
+    }
+
+    player.src = song;
+    player.play();
+
+    document.querySelectorAll(".lyrics-box").forEach(box => {
+      box.style.display = "none";
+    });
+
+    const lyrics = document.getElementById(lyricsId);
+    if (lyrics) {
+      lyrics.style.display = "block";
+
+      lyrics.querySelectorAll(".lyrics-part").forEach(p => {
+        p.style.display = "none";
+      });
+
+      const firstPart = lyrics.querySelector(".lyrics-part");
+      if (firstPart) {
+        firstPart.style.display = "block";
+      }
+    }
+  }
+
+  function showPart(partId) {
+    document.querySelectorAll(".lyrics-part").forEach(p => {
+      p.style.display = "none";
+    });
+
+    const part = document.getElementById(partId);
+    if (part) {
+      part.style.display = "block";
+    }
+  }
+
+  if (mainVideo) {
+    mainVideo.addEventListener("play", () => {
+      if (!player.paused) {
+        player.pause();
+      }
+    });
+  }
+
+  if (player) {
+    player.addEventListener("play", () => {
+      if (mainVideo && !mainVideo.paused) {
+        mainVideo.pause();
+      }
+    });
+  }
+</script>
+</body>
+
+<video autoplay muted loop playsinline class="video-bg">
+  <source src="I am.mp4" type="video/mp4">
+</video>
+</html>
