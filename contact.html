@@ -30,7 +30,6 @@
 
 body {
     margin: 0;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
@@ -52,7 +51,6 @@ nav {
     backdrop-filter: blur(6px);
     padding: 10px;
     text-align: center;
-    width: 1500.8px;
 }
 
 nav a {
@@ -118,17 +116,48 @@ button:hover {
     background-color: #1d4ed8;
 }
 
+input[type="text"] {
+    width: 80%;
+    padding: 8px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.9);
+    color:#000000;
+    border-radius: 4px;
+}
+
+input[name="lname"], input[name="fname"] {
+    font-size: 16px;
+}
+
+input[type="checkbox"] {
+    margin: 10px 0;
+    transform: scale(1.5);
+    background-color: #142351;
+    color: black;
+}
+
+input[type="submit"] {
+    background-color: rgba(0, 0, 0, 0.99);
+    color: white;
+    border: rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 h2, h3, h4 {
     font-size: 24px;
     margin-top: 20px;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, form {
     color: white;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-p {
+p, form {
     font-size: 18px;
     line-height: 1.6;
 }
@@ -154,7 +183,6 @@ p {
 </style>
 </head>
 <body>
-
 
 <header class="site-header">
   <img src="logo.png" alt="Site Logo" class="logo">
@@ -187,12 +215,54 @@ p {
       </div>
     </div>
   </section>
+
+  <section>
+    <h2>Get in Touch</h2>
+    <p>If you have any questions, inquiries, or would like to discuss potential collaborations, feel free to reach out to me via email or phone. I look forward to hearing from you!</p>
+    <form class="contact-form" action="submit.html" method="GET">
+      <label for="fname">First name:</label><br>
+      <input type="text" id="fname" name="fname"><br>
+
+      <label for="lname">Last name:</label><br>
+      <input type="text" name="lname" placeholder="Last Name" required><br>
+
+      <label>
+        <input type="checkbox" name="reason" value="Talk"> I want to talk to you
+      </label><br>
+
+      <label>
+        <input type="checkbox" name="reason" value="Project"> I need a project built
+      </label><br>
+
+      <label>
+        <input type="checkbox" name="reason" value="Support"> I need a hand
+      </label><br>
+
+      <input type="submit" value="Submit">
+    </form> 
+  </section>
 </main>
 
 <footer>
   <p>&copy; 2025 Axiel</p>
 </footer>
+  <script>
+    const form = document.querySelector(".contact-form");
 
+    form.addEventListener("submit", function (e) {
+      const checkboxes = document.querySelectorAll('input[name="reason"]');
+      let checked = false;
+
+      checkboxes.forEach(box => {
+        if (box.checked) checked = true;
+      });
+
+      if (!checked) {
+        e.preventDefault();
+        alert("Please select at least one reason before submitting.");
+      }
+    });
+  </script>
 </body>
 
 <video autoplay muted loop playsinline class="video-bg">
