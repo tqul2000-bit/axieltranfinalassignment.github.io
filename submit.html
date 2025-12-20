@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thank you for making a request!</title>
+<style>
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    padding: 10px;
+    text-align: relative;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 30px;
+    max-width: 900px;
+    margin: auto;
+}
+
+section {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    background-color: #1c2741;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    backdrop-filter: blur(6px);
+}
+
+button {
+    background-color: #142351;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.video-bg {
+    position: fixed;
+    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: blur(22px) brightness(0.5);
+    transform: scale(1.1);
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+h1, h2, p {
+    color: white;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+header, nav {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.header-text h1,
+.header-text p {
+    margin: 0;
+}
+
+main, header, nav, footer {
+    position: relative;
+    z-index: 1;
+}
+</style>
+</head>
+<body>
+
+
+<header class="site-header">
+  <img src="logo.png" alt="Site Logo" class="logo">
+  <div class="header-text">
+    <h1>My Contact</h1>
+    <p></p>
+  </div>
+</header>
+
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+  <section>
+    <h2>You have sent a request to "tqul2000@gmail.com"</h2>
+    <p>Thank you for your request, <span id="lastName"></span>! 
+        </br>
+         I will get back to you as soon as possible!
+    </p>
+  </section>
+</main>
+<footer>
+  <p>&copy; 2025 Axiel</p>
+</footer>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const lname = params.get("lname");
+
+    if (lname) {
+        document.getElementById("lastName").textContent = lname;
+    } else {
+         document.getElementById("lastName").textContent = "friend";
+    }
+  </script>
+</body>
+
+<video autoplay muted loop playsinline class="video-bg">
+  <source src="I am.mp4" type="video/mp4">
+</video>
+</html>
